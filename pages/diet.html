@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>MediMind | Diet &amp; Water</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/medimind-v6.css">
+    <link rel="manifest" href="../manifest.webmanifest">
+    <meta name="theme-color" content="#10b981">
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="../assets/js/core/layout.js" defer></script>
+    <script src="../assets/js/core/demo-data.js" defer></script>
+    <script src="../assets/js/core/onboarding.js" defer></script>
+    <script src="../assets/js/core/pwa.js" defer></script>
+    <script src="../assets/js/core/app.js" defer></script>
+    <script src="../assets/js/pages/diet.js" defer></script>
+</head>
+<body data-page="diet">
+    <main class="main-content page">
+        <div class="stack">
+            <div class="page-header">
+                <h1>Diet &amp; Water</h1>
+                <p>Track your meals and stay hydrated.</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="row-between">
+                        <span class="caption">CALORIES TODAY</span>
+                        <span style="color:var(--primary);"><i data-lucide="salad" aria-hidden="true" style="width:18px;height:18px"></i></span>
+                    </div>
+                    <div class="h1" style="margin-top:10px;font-size:24px;"><span id="calorie-count">0</span> <span style="font-size:14px;font-weight:500;color:var(--text-muted);">/ 2,000 kcal</span></div>
+                    <div class="progress-track" style="margin-top:12px;">
+                        <div id="calorie-bar" class="progress-fill" style="width:0%"></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="row-between">
+                        <span class="caption">WATER INTAKE</span>
+                        <span style="color:var(--info);"><i data-lucide="droplet" aria-hidden="true" style="width:18px;height:18px"></i></span>
+                    </div>
+                    <div class="h1" style="margin-top:10px;font-size:24px;"><span id="water-count">0</span> <span style="font-size:14px;font-weight:500;color:var(--text-muted);">/ 8 glasses</span></div>
+                    <div class="row" style="gap:6px;margin-top:12px;" id="water-glasses" aria-hidden="true"></div>
+                    <div class="control-row" style="margin-top:12px;">
+                        <button id="water-minus" class="btn btn-sm" type="button">&minus; Glass</button>
+                        <button id="water-plus" class="btn btn-sm btn-primary" type="button">+ Glass</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="h2" style="font-size:16px;">Today's Meals</span>
+                <form id="meal-form" style="margin-top:14px;">
+                    <div class="grid-2">
+                        <div class="input-group">
+                            <label class="input-label" for="meal-name">Meal</label>
+                            <input class="input" id="meal-name" placeholder="e.g. Daal + 2 roti" required>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="meal-calories">Calories (kcal)</label>
+                            <input class="input" id="meal-calories" type="number" min="1" placeholder="e.g. 450" required>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit" style="margin-top:14px;">Add Meal</button>
+                </form>
+                <ul id="meal-list" class="stack" style="margin-top:14px;gap:10px;list-style:none;padding:0;margin-bottom:0;"></ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

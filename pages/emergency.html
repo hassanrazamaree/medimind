@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>MediMind | Emergency SOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/medimind-v6.css">
+    <link rel="manifest" href="../manifest.webmanifest">
+    <meta name="theme-color" content="#10b981">
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="../assets/js/core/layout.js" defer></script>
+    <script src="../assets/js/core/demo-data.js" defer></script>
+    <script src="../assets/js/core/onboarding.js" defer></script>
+    <script src="../assets/js/core/pwa.js" defer></script>
+    <script src="../assets/js/core/app.js" defer></script>
+    <script src="../assets/js/pages/emergency.js" defer></script>
+</head>
+<body data-page="emergency">
+    <main class="main-content page">
+        <div class="stack">
+            <div class="page-header">
+                <h1>Emergency SOS</h1>
+                <p>Agar koi fori khatre mein hai, abhi emergency service ko call karein.</p>
+            </div>
+
+            <section class="card card-red" style="text-align:center;">
+                <div class="row" style="justify-content:center;color:var(--error);">
+                    <i data-lucide="siren" aria-hidden="true" style="width:32px;height:32px;"></i>
+                </div>
+                <div class="h2" style="margin-top:8px;">Need help right now?</div>
+                <p class="caption" style="margin-top:6px;">Tap the button below to call Rescue 1122 immediately.</p>
+                <a class="btn btn-danger btn-block" style="margin-top:16px;height:52px;font-size:16px;" href="tel:1122">SOS — Call 1122 Now</a>
+            </section>
+
+            <section class="card">
+                <div class="section-head"><h2>Emergency Numbers</h2></div>
+                <div class="grid-3">
+                    <a class="list-row" href="tel:1122" style="text-decoration:none;color:inherit;">
+                        <div class="list-row-main">
+                            <span class="list-ic" style="background:rgba(239,68,68,.12);color:var(--error);">
+                                <i data-lucide="phone-call" aria-hidden="true"></i>
+                            </span>
+                            <div>
+                                <div class="list-title">Rescue</div>
+                                <div class="list-sub">1122</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-error">Call Now</span>
+                    </a>
+                    <a class="list-row" href="tel:115" style="text-decoration:none;color:inherit;">
+                        <div class="list-row-main">
+                            <span class="list-ic" style="background:rgba(245,158,11,.14);color:var(--warning);">
+                                <i data-lucide="ambulance" aria-hidden="true"></i>
+                            </span>
+                            <div>
+                                <div class="list-title">Edhi Ambulance</div>
+                                <div class="list-sub">115</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-error">Call Now</span>
+                    </a>
+                    <a class="list-row" href="tel:15" style="text-decoration:none;color:inherit;">
+                        <div class="list-row-main">
+                            <span class="list-ic" style="background:rgba(59,130,246,.12);color:var(--info);">
+                                <i data-lucide="shield" aria-hidden="true"></i>
+                            </span>
+                            <div>
+                                <div class="list-title">Police</div>
+                                <div class="list-sub">15</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-error">Call Now</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="section-head"><h2>First-Aid Basics</h2></div>
+                <div>
+                    <button class="aid-toggle" data-target="#aid-cpr" aria-expanded="false">CPR (Cardiopulmonary Resuscitation)</button>
+                    <div class="aid-panel" id="aid-cpr">Only if trained: call 1122 first. If the person is unresponsive and not breathing normally, push hard and fast in the center of the chest — about 100–120 compressions per minute. Continue until help arrives.</div>
+                    <button class="aid-toggle" data-target="#aid-choking" aria-expanded="false">Choking</button>
+                    <div class="aid-panel" id="aid-choking">Encourage the person to cough. If they cannot breathe or speak, stand behind them and give firm abdominal thrusts (Heimlich maneuver) until the object comes out or help arrives.</div>
+                    <button class="aid-toggle" data-target="#aid-bleeding" aria-expanded="false">Severe Bleeding</button>
+                    <div class="aid-panel" id="aid-bleeding">Apply firm, direct pressure on the wound with a clean cloth or bandage. Keep pressing and call 1122 immediately if bleeding does not stop. Do not remove soaked bandages — add more on top.</div>
+                    <button class="aid-toggle" data-target="#aid-burns" aria-expanded="false">Burns</button>
+                    <div class="aid-panel" id="aid-burns">Cool the burn under clean, running water for at least 20 minutes. Do not apply ice, toothpaste, or creams. Cover loosely with cling film or a clean cloth and seek medical help for serious burns.</div>
+                </div>
+            </section>
+
+            <section class="card card-accent">
+                <p class="caption">⚠️ These are basic guidance only. This app does not replace professional medical help. In any emergency, call 1122 first.</p>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>MediMind | Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/medimind-v6.css">
+    <link rel="manifest" href="../manifest.webmanifest">
+    <meta name="theme-color" content="#10b981">
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="../assets/js/core/layout.js" defer></script>
+    <script src="../assets/js/core/demo-data.js" defer></script>
+    <script src="../assets/js/core/onboarding.js" defer></script>
+    <script src="../assets/js/core/pwa.js" defer></script>
+    <script src="../assets/js/core/app.js" defer></script>
+    <script src="../assets/js/pages/profile.js" defer></script>
+</head>
+<body data-page="profile">
+    <main class="main-content page">
+        <div class="stack">
+            <div class="page-header">
+                <h1>Profile & Settings</h1>
+                <p>Apni personal information, health data aur preferences manage karein.</p>
+            </div>
+
+            <div class="profile-layout">
+                <div class="stack">
+                    <section class="card">
+                        <div class="section-head"><h2>Profile</h2></div>
+                        <div class="profile-photo-wrap" style="margin-bottom:16px;">
+                            <img id="profile-photo" class="profile-photo" alt="Profile photo" style="display:none;">
+                            <div id="profile-photo-placeholder" class="profile-photo-placeholder">U</div>
+                            <div>
+                                <label for="photo-input" id="profile-photo-label" class="profile-photo-label">Click to upload a photo</label>
+                                <input id="photo-input" type="file" accept="image/*" hidden>
+                            </div>
+                        </div>
+                        <form id="profile-form-main">
+                            <div class="form-grid">
+                                <div class="form-field">
+                                    <label class="label" for="name-input">Full Name</label>
+                                    <input id="name-input" class="input" type="text" placeholder="Your full name">
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="phone-input">Phone Number</label>
+                                    <input id="phone-input" class="input" type="tel" placeholder="e.g. 0300 1234567">
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="dob-input">Date of Birth</label>
+                                    <input id="dob-input" class="input" type="date">
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="blood-input">Blood Group</label>
+                                    <select id="blood-input" class="input">
+                                        <option value="">Select…</option>
+                                        <option value="A+">A+</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B-">B-</option>
+                                        <option value="O+">O+</option>
+                                        <option value="O-">O-</option>
+                                        <option value="AB+">AB+</option>
+                                        <option value="AB-">AB-</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="gender-input">Gender</label>
+                                    <select id="gender-input" class="input">
+                                        <option value="">Select…</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button id="save-profile" class="btn btn-primary btn-block" style="margin-top:16px;">Save Profile</button>
+                        </form>
+                    </section>
+
+                    <section class="card">
+                        <div class="section-head"><h2>Health Information</h2></div>
+                        <form id="health-form">
+                            <div class="form-grid">
+                                <div class="form-field">
+                                    <label class="label" for="height-input">Height (cm)</label>
+                                    <input id="height-input" class="input" type="number" min="1" placeholder="e.g. 170">
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="weight-input">Weight (kg)</label>
+                                    <input id="weight-input" class="input" type="number" min="1" placeholder="e.g. 65">
+                                </div>
+                                <div class="form-field full">
+                                    <label class="label" for="allergies-input">Allergies (comma separated)</label>
+                                    <textarea id="allergies-input" class="input" rows="2" placeholder="e.g. Penicillin, Peanuts"></textarea>
+                                </div>
+                                <div class="form-field full">
+                                    <label class="label" for="conditions-input">Chronic Conditions</label>
+                                    <textarea id="conditions-input" class="input" rows="2" placeholder="e.g. Diabetes, Hypertension"></textarea>
+                                </div>
+                                <div class="form-field full">
+                                    <label class="label" for="current-med-input">Current Medications</label>
+                                    <textarea id="current-med-input" class="input" rows="2" placeholder="e.g. Metformin 500mg daily"></textarea>
+                                </div>
+                            </div>
+                            <button id="save-health" class="btn btn-primary btn-block" style="margin-top:16px;">Save Health Info</button>
+                        </form>
+                    </section>
+                </div>
+
+                <div>
+                    <section class="card">
+                        <div class="section-head"><h2>Settings</h2></div>
+                        <div class="stack">
+                            <div class="row-between">
+                                <span class="list-title">Dark Mode</span>
+                                <button class="btn btn-soft btn-sm" data-theme-toggle aria-label="Toggle dark mode">
+                                    <i data-lucide="moon" aria-hidden="true" style="width:16px;height:16px;"></i>
+                                </button>
+                            </div>
+                            <hr style="border:none;border-top:1px solid var(--border);">
+                            <button id="replay-tutorial" class="btn btn-soft btn-block" style="margin-bottom:12px;">Replay Tutorial</button>
+                            <button id="install-app" class="btn btn-soft btn-block" style="margin-bottom:12px;">Install App</button>
+                            <button id="clear-data" class="btn btn-danger btn-block">Clear All Data</button>
+                            <p class="caption">Clears all saved health data on this device, including the demo data.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>MediMind | Medications</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/medimind-v6.css">
+    <link rel="manifest" href="../manifest.webmanifest">
+    <meta name="theme-color" content="#10b981">
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="../assets/js/core/layout.js" defer></script>
+    <script src="../assets/js/core/demo-data.js" defer></script>
+    <script src="../assets/js/core/onboarding.js" defer></script>
+    <script src="../assets/js/core/pwa.js" defer></script>
+    <script src="../assets/js/core/app.js" defer></script>
+    <script src="../assets/js/pages/medications.js" defer></script>
+</head>
+<body data-page="medications">
+    <main class="main-content page">
+        <div class="stack">
+            <div class="page-header">
+                <h1>Medications</h1>
+                <p>Apni dawaiyon ka schedule aur daily doses yahin manage karein.</p>
+            </div>
+
+            <div class="content-grid">
+                <div class="stack">
+                    <section class="card">
+                        <div class="section-head">
+                            <h2>Today's Schedule</h2>
+                            <span class="caption" id="schedule-date"></span>
+                        </div>
+                        <div id="schedule-list" class="item-list">
+                            <div class="empty-state"><p>No medications scheduled for today.</p></div>
+                        </div>
+                    </section>
+
+                    <section class="card">
+                        <div class="section-head"><h2>Active Medications</h2></div>
+                        <div id="med-list" class="item-list">
+                            <div class="empty-state"><p>You haven't added any medications yet.</p></div>
+                        </div>
+                        <div id="history-list" style="margin-top:16px;"></div>
+                    </section>
+                </div>
+
+                <div>
+                    <section class="card">
+                        <div class="section-head"><h2>Add Medication</h2></div>
+                        <form id="med-form">
+                            <div class="stack">
+                                <div class="form-field">
+                                    <label class="label" for="med-name">Medicine Name</label>
+                                    <input id="med-name" class="input" type="text" placeholder="e.g. Paracetamol" required>
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="dosage">Dosage</label>
+                                    <input id="dosage" class="input" type="text" placeholder="e.g. 500mg" required>
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="frequency">Frequency</label>
+                                    <select id="frequency" class="input" required>
+                                        <option value="">Select…</option>
+                                        <option value="Once daily">Once daily</option>
+                                        <option value="Twice daily">Twice daily</option>
+                                        <option value="Three times daily">Three times daily</option>
+                                        <option value="Every 8 hours">Every 8 hours</option>
+                                        <option value="Weekly">Weekly</option>
+                                        <option value="As needed">As needed</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <span class="label">Time(s)</span>
+                                    <div id="times-container" class="stack" style="gap:8px;">
+                                        <input type="time" class="input time-input" required>
+                                    </div>
+                                    <button type="button" id="add-time" class="btn btn-soft btn-sm" style="margin-top:8px;align-self:flex-start;">+ Add another time</button>
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="start-date">Start Date</label>
+                                    <input id="start-date" class="input" type="date" required>
+                                </div>
+                                <div class="form-field">
+                                    <span class="label">Duration</span>
+                                    <div class="control-row" style="margin-bottom:0;">
+                                        <input id="duration" class="input" type="number" min="1" placeholder="e.g. 7" required style="flex:1;">
+                                        <select id="duration-unit" class="input" style="flex:1;">
+                                            <option value="Days">Days</option>
+                                            <option value="Weeks">Weeks</option>
+                                            <option value="Months">Months</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="med-notes">Notes (optional)</label>
+                                    <textarea id="med-notes" class="input" rows="3" placeholder="Any special instructions…"></textarea>
+                                </div>
+                                <button type="submit" id="med-submit" class="btn btn-primary btn-block">Add Medication</button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

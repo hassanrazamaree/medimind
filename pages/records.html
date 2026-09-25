@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>MediMind | Health Records</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/medimind-v6.css">
+    <link rel="manifest" href="../manifest.webmanifest">
+    <meta name="theme-color" content="#10b981">
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="../assets/js/core/layout.js" defer></script>
+    <script src="../assets/js/core/demo-data.js" defer></script>
+    <script src="../assets/js/core/onboarding.js" defer></script>
+    <script src="../assets/js/core/pwa.js" defer></script>
+    <script src="../assets/js/core/app.js" defer></script>
+    <script src="../assets/js/pages/records.js" defer></script>
+</head>
+<body data-page="records">
+    <main class="main-content page">
+        <div class="stack">
+            <div class="page-header">
+                <h1>Health Records</h1>
+                <p>Apni medical documents ko store aur organize karein.</p>
+            </div>
+
+            <div class="filter-tabs" id="category-tabs">
+                <button type="button" class="filter-tab active" data-category="all">All</button>
+                <button type="button" class="filter-tab" data-category="lab">Lab Reports</button>
+                <button type="button" class="filter-tab" data-category="prescription">Prescriptions</button>
+                <button type="button" class="filter-tab" data-category="vaccination">Vaccinations</button>
+                <button type="button" class="filter-tab" data-category="imaging">Imaging</button>
+                <button type="button" class="filter-tab" data-category="notes">Doctor Notes</button>
+            </div>
+
+            <div class="search-wrap">
+                <i data-lucide="search" class="search-icon" aria-hidden="true"></i>
+                <input id="search-input" class="input" type="text" placeholder="Search records…" autocomplete="off">
+            </div>
+
+            <div class="content-grid">
+                <section class="card">
+                    <div class="section-head">
+                        <h2>Records</h2>
+                        <span id="records-count" class="caption"></span>
+                    </div>
+                    <div id="records-list" class="item-list">
+                        <div class="empty-state"><p>No health records found.</p></div>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <div class="section-head"><h2>Upload Record</h2></div>
+                    <form id="upload-form">
+                        <div class="stack">
+                            <div class="form-field">
+                                <label class="label" for="record-title">Record Title</label>
+                                <input id="record-title" class="input" type="text" placeholder="e.g. Blood Test Results" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="label" for="record-category">Category</label>
+                                <select id="record-category" class="input" required>
+                                    <option value="lab">Lab Reports</option>
+                                    <option value="prescription">Prescriptions</option>
+                                    <option value="vaccination">Vaccinations</option>
+                                    <option value="imaging">Imaging</option>
+                                    <option value="notes">Doctor Notes</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label class="label" for="record-date">Date</label>
+                                <input id="record-date" class="input" type="date" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="label" for="record-notes">Notes / Description</label>
+                                <textarea id="record-notes" class="input" rows="3" placeholder="Add any additional details…"></textarea>
+                            </div>
+                            <div class="form-field">
+                                <label class="label" for="record-file">File Upload</label>
+                                <input id="record-file" class="input" type="file" accept="image/*,.pdf" required>
+                                <div id="file-preview" style="margin-top:12px;"></div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Save Record</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+    <div class="modal-backdrop hidden" id="record-modal-backdrop" role="dialog" aria-modal="true">
+        <div class="modal">
+            <button type="button" class="modal-close" aria-label="Close">×</button>
+            <div id="record-modal-content"></div>
+        </div>
+    </div>
+</body>
+</html>

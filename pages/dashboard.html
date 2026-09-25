@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>MediMind | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/medimind-v6.css">
+    <link rel="manifest" href="../manifest.webmanifest">
+    <meta name="theme-color" content="#10b981">
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="../assets/js/core/layout.js" defer></script>
+    <script src="../assets/js/core/demo-data.js" defer></script>
+    <script src="../assets/js/core/onboarding.js" defer></script>
+    <script src="../assets/js/core/pwa.js" defer></script>
+    <script src="../assets/js/core/app.js" defer></script>
+    <script src="../assets/js/pages/dashboard.js" defer></script>
+</head>
+<body data-page="dashboard">
+    <main class="main-content page">
+        <div class="stack">
+            <div class="page-header">
+                <h1>Assalam-o-Alaikum, <span data-greeting-name>Friend</span></h1>
+                <p>Here's your health summary for today.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <div class="row-between">
+                        <span class="caption">STEPS</span>
+                        <span style="color:var(--primary);"><i data-lucide="activity" aria-hidden="true" style="width:18px;height:18px"></i></span>
+                    </div>
+                    <div class="stat-value" style="margin-top:10px;" data-stat="steps">0</div>
+                    <span class="caption">Goal: 10,000</span>
+                </div>
+                <div class="card">
+                    <div class="row-between">
+                        <span class="caption">HEART RATE</span>
+                        <span style="color:var(--error);"><i data-lucide="heart-pulse" aria-hidden="true" style="width:18px;height:18px"></i></span>
+                    </div>
+                    <div class="stat-value" style="margin-top:10px;" data-stat="heartRate">-- bpm</div>
+                    <span class="caption">Resting, within normal range</span>
+                </div>
+                <div class="card">
+                    <div class="row-between">
+                        <span class="caption">SLEEP</span>
+                        <span style="color:var(--accent);"><i data-lucide="moon" aria-hidden="true" style="width:18px;height:18px"></i></span>
+                    </div>
+                    <div class="stat-value" style="margin-top:10px;" data-stat="sleep">-- hrs</div>
+                    <span class="caption">Last night</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="row-between">
+                    <span class="h2" style="font-size:16px;">This Week</span>
+                    <div class="row" style="gap:14px;">
+                        <span class="caption row" style="gap:6px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--primary);display:inline-block;"></span>Steps</span>
+                        <span class="caption row" style="gap:6px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;"></span>Sleep</span>
+                    </div>
+                </div>
+                <div class="control-row" style="margin-top:16px;margin-bottom:0;">
+                    <button class="btn btn-sm btn-primary" data-period="7">7d</button>
+                    <button class="btn btn-sm" data-period="30">30d</button>
+                    <button class="btn btn-sm" data-period="90">90d</button>
+                </div>
+                <div style="height:280px;margin-top:8px;"><canvas id="health-chart" aria-label="Wellness trend"></canvas></div>
+            </div>
+
+            <div>
+                <span class="h2" style="font-size:16px;">Quick Links</span>
+                <div class="grid-3" style="margin-top:12px;">
+                    <a class="card row" style="gap:12px;" href="chat.html">
+                        <span class="list-ic" style="background:rgba(16,185,129,.12);color:var(--primary-dark);"><i data-lucide="message-circle" aria-hidden="true"></i></span>
+                        <span><span class="list-title">AI Chat</span><br><span class="caption">Ask a health question</span></span>
+                    </a>
+                    <a class="card row" style="gap:12px;" href="blood.html">
+                        <span class="list-ic" style="background:rgba(239,68,68,.1);color:var(--error);"><i data-lucide="droplet" aria-hidden="true"></i></span>
+                        <span><span class="list-title">Blood Analyzer</span><br><span class="caption">Check your latest results</span></span>
+                    </a>
+                    <a class="card row" style="gap:12px;" href="medications.html">
+                        <span class="list-ic" style="background:rgba(139,92,246,.12);color:var(--accent);"><i data-lucide="pill" aria-hidden="true"></i></span>
+                        <span><span class="list-title">Medications</span><br><span class="caption">View today's schedule</span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

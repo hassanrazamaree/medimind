@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MediMind | AI Chat</title>
+    <link rel="stylesheet" href="../assets/css/medimind-v6.css">
+    <link rel="manifest" href="../manifest.webmanifest">
+    <meta name="theme-color" content="#10b981">
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.min.js" defer></script>
+    <script src="../assets/js/core/layout.js" defer></script>
+    <script src="../assets/js/core/demo-data.js" defer></script>
+    <script src="../assets/js/core/onboarding.js" defer></script>
+    <script src="../assets/js/core/pwa.js" defer></script>
+    <script src="../assets/js/core/app.js" defer></script>
+    <script src="../assets/js/pages/chat.js" defer></script>
+</head>
+<body data-page="chat">
+    <main class="main-content page">
+        <div class="chat-layout">
+            <aside class="simple-card starters-card" id="starters-card">
+                <div class="starters-head">
+                    <span><i data-lucide="sparkles" aria-hidden="true"></i> Try asking</span>
+                </div>
+                <div class="starters">
+                    <button class="starter" data-suggestion="I feel tired and weak all the time"><i data-lucide="battery-low" aria-hidden="true"></i><span class="starter-text">Fatigue &amp; weakness</span></button>
+                    <button class="starter" data-suggestion="What foods are good for anemia?"><i data-lucide="salad" aria-hidden="true"></i><span class="starter-text">Anemia diet</span></button>
+                    <button class="starter" data-suggestion="I have a headache, what can help?"><i data-lucide="brain" aria-hidden="true"></i><span class="starter-text">Headache relief</span></button>
+                    <button class="starter" data-suggestion="I have a fever, what should I do?"><i data-lucide="thermometer" aria-hidden="true"></i><span class="starter-text">Fever care</span></button>
+                    <button class="starter" data-suggestion="How much water should I drink daily?"><i data-lucide="droplets" aria-hidden="true"></i><span class="starter-text">Daily hydration</span></button>
+                    <button class="starter" data-suggestion="My blood pressure is high, what should I do?"><i data-lucide="heart-pulse" aria-hidden="true"></i><span class="starter-text">High blood pressure</span></button>
+                </div>
+            </aside>
+
+            <section class="simple-card" style="flex:1;display:flex;flex-direction:column;min-width:0;overflow:hidden">
+                <div class="chat-header">
+                    <div class="chat-header-left">
+                        <div class="ai-dot">M</div>
+                        <div>
+                            <div class="ai-name">MediMind AI</div>
+                            <div class="ai-status">Online</div>
+                        </div>
+                    </div>
+                    <div class="chat-header-actions">
+                        <button class="btn btn-ghost btn-sm" id="starters-toggle-mobile" aria-label="Show suggestions"><i data-lucide="sparkles" aria-hidden="true"></i><span>Suggestions</span></button>
+                        <button class="btn btn-ghost btn-sm" id="readAloudBtn" aria-label="Read last reply aloud"><i data-lucide="volume-2" aria-hidden="true"></i><span id="readAloudLabel">Read aloud</span></button>
+                        <button class="btn btn-ghost btn-sm" id="chatMenuBtn" aria-label="Start new chat"><i data-lucide="plus" aria-hidden="true"></i><span>New chat</span></button>
+                        <button class="btn btn-ghost btn-sm" id="clearChatBtn" aria-label="Clear chat"><i data-lucide="trash-2" aria-hidden="true"></i><span>Clear</span></button>
+                    </div>
+                </div>
+
+                <div id="chatWelcome" class="chat-welcome">
+                    <h2>Assalam-o-Alaikum! 👋</h2>
+                    <p>Main aapka <strong>MediMind Assistant</strong> hun. Apne symptoms batayein ya koi bhi health se related sawal poochein — main madad ke liye hazir hun.</p>
+                    <div class="welcome-chips">
+                        <button class="welcome-chip" data-suggestion="I feel tired all the time, what could be wrong?">😴 Fatigue</button>
+                        <button class="welcome-chip" data-suggestion="What foods are good for anemia?">🥗 Anemia diet</button>
+                        <button class="welcome-chip" data-suggestion="How can I improve my sleep?">😴 Better sleep</button>
+                        <button class="welcome-chip" data-suggestion="I have a headache">🤕 Headache</button>
+                    </div>
+                </div>
+
+                <div id="chatArea" class="chat-area" aria-live="polite"></div>
+
+                <div class="composer-try">
+                    Try:
+                    <a href="#" data-suggestion="What are the symptoms of iron deficiency?">iron deficiency symptoms</a>·
+                    <a href="#" data-suggestion="How much water should I drink daily?">hydration</a>·
+                    <a href="#" data-suggestion="Give me tips for a healthy diet">healthy diet tips</a>
+                </div>
+
+                <div class="composer">
+                    <button id="voiceBtn" class="icon-btn" aria-label="Voice input"><i data-lucide="mic" aria-hidden="true"></i></button>
+                    <input id="userInput" type="text" placeholder="Ask a health question…" autocomplete="off" aria-label="Your message">
+                    <button id="sendBtn" class="btn btn-primary">Send</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
