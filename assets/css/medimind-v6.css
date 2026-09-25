@@ -420,7 +420,7 @@ body.dark .card-accent{background:rgba(139,92,246,.1);}
   .topbar-title{font-size:16px;}
   .profile-chip span[data-profile-name]{display:none;}
   .main-content,.page{margin-left:0;padding-top:calc(var(--topbar-h) + var(--s4));}
-  .page{padding-left:var(--s4);padding-right:var(--s4);padding-bottom:96px;}
+  .page{padding-left:var(--s4);padding-right:var(--s4);padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 56px);}
   .bottomnav{display:block;}
   .hamburger{display:flex;}
   .grid-3,.grid-2,.content-grid,.form-grid{grid-template-columns:1fr;}
