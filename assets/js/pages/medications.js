@@ -57,7 +57,7 @@
   function renderSchedule() {
     var today = todayStr();
     var dateEl = document.getElementById('schedule-date');
-    if (dateEl) dateEl.textContent = '\uD83D\xDDD ' + new Date().toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'short', day:'numeric' });
+    if (dateEl) dateEl.textContent = '\uD83D\uDCC5 ' + new Date().toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'short', day:'numeric' });
     var meds = readMeds().filter(isDueToday);
     var log = readLog().filter(function(e){ return e.date === today; });
     var container = document.getElementById('schedule-list');
@@ -183,7 +183,7 @@
         var title = document.createElement('h3');
         title.textContent = 'Medication History';
         title.style.fontSize = '0.9rem';
-        title.style.color = 'var(--text-2)';
+        title.style.color = 'var(--text)';
         title.style.marginBottom = '8px';
         hl.appendChild(title);
         var list = document.createElement('div');
