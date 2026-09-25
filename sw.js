@@ -1,5 +1,5 @@
 /* MediMind service worker — runtime cache-first so the app works offline after first visit. */
-const CACHE = 'medimind-v14';
+const CACHE = 'medimind-v15';
 
 self.addEventListener('install', (event) => {
     self.skipWaiting();
