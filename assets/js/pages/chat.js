@@ -5,7 +5,7 @@ const ICONS = {
 
 const CONFIG = {
     ENDPOINT: '/api/chat',
-    MODEL: 'llama-3.3-70b-versatile',
+    MODEL: 'openai/gpt-oss-20b',
     MAX_TOKENS: 600,
     TEMPERATURE: 0.6,
     MAX_HISTORY: 20,

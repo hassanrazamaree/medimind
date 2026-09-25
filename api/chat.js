@@ -2,9 +2,9 @@
 // Configure GROQ_API_KEY in the hosting provider's environment settings.
 
 const ALLOWED_MODELS = new Set([
-    'llama-3.3-70b-versatile',
-    'llama3-8b-8192',
-    'llama-3.1-8b-instant'
+    'openai/gpt-oss-20b',
+    'openai/gpt-oss-120b',
+    'qwen/qwen3.6-27b'
 ]);
 
 export default async function handler(request, response) {
@@ -46,7 +46,7 @@ export default async function handler(request, response) {
                 Authorization: `Bearer ${apiKey}`
             },
             body: JSON.stringify({
-                model: ALLOWED_MODELS.has(model) ? model : 'llama-3.3-70b-versatile',
+                model: ALLOWED_MODELS.has(model) ? model : 'openai/gpt-oss-20b',
                 messages,
                 temperature: Math.min(Math.max(Number(temperature) || 0.6, 0), 2),
                 max_tokens: Math.min(Math.max(Number(maxTokens) || 600, 1), 4096)
